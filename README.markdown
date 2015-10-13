@@ -28,7 +28,6 @@ Classify your PuppetDB nodes with `puppetdb_shared_cert::puppetdb`, and the stan
 ```
 class { 'puppetdb_shared_cert::puppetdb':
   certname      => 'puppetdb-shared-cert',
-  dns_alt_names => ['puppetdb.bar.com','puppetdb'],
 }
 ```
 

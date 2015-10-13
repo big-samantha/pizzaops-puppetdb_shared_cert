@@ -1,10 +1,8 @@
 class puppetdb_shared_cert::puppetdb (
   $certname = $puppetdb_shared_cert::certname,
-  $dns_alt_names = $puppetdb_shared_cert::dns_alt_names
 ) inherits puppetdb_shared_cert {
 
   validate_string($certname)
-  validate_array($dns_alt_names)
 
   unless $::settings::ca_server == $::settings::certname {
     fail('puppetdb_shared_cert::puppetdb only functions when compiled on the CA master. It cannot be used in a run against a compile master.')
