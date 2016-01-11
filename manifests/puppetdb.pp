@@ -20,7 +20,7 @@ class puppetdb_shared_cert::puppetdb (
     owner   => $key_owner,
     group   => $key_group,
   }
-  file { 'puppetdb-shared-publickey':
+  file { 'puppetdb-shared-privatekey':
     ensure  => file,
     content => file("/etc/puppetlabs/puppet/ssl/private_keys/${certname}.pem"),
     path    => "/etc/puppetlabs/puppet/ssl/private_keys/${certname}.pem",
@@ -28,7 +28,7 @@ class puppetdb_shared_cert::puppetdb (
     owner   => $key_owner,
     group   => $key_group,
   }
-  file { 'puppetdb-shared-privatekey':
+  file { 'puppetdb-shared-publickey':
     ensure  => file,
     content => file("/etc/puppetlabs/puppet/ssl/public_keys/${certname}.pem"),
     path    => "/etc/puppetlabs/puppet/ssl/public_keys/${certname}.pem",
